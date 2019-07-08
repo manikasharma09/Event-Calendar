@@ -1,0 +1,33 @@
+  <!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div id="top_menu"> <a href="http://127.0.0.1:8000/contact/"><strong>Contact Us</strong></a> | <a href="http://127.0.0.1:8000/all_events/"><strong> View All Events</strong></a> </div>
+    </header>
+  </div>
+</body>
+  {% block content %}
+  <h1>Add your Event</h1>
+  
+  {% if submitted %}
+      <p class="success">
+         Your event has been added successfully !
+     </p>
+ 
+ {% else %}
+     <form action="" method="post" novalidate>
+     <table>
+         {{ form.as_table }}
+         <tr>
+             <td>&nbsp;</td>
+             <td><input type="submit" value="Submit"></td>
+         </tr>
+     </table>
+     {% csrf_token %}
+     </form>
+ {% endif %}
+ {% endblock content %}

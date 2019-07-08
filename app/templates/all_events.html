@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+	<title>List of Events</title>
+</head>
+<body>
+	<div id="wrapper">
+		<header id="header">
+			<div id="top_menu"><a href="http://127.0.0.1:8000/event/"><strong>Add Event</strong></a> | <a href="http://127.0.0.1:8000/contact/"><strong>Contact Us</strong></a></div>
+		</header>
+	{% if events_list %}
+	<ol>
+		{% for event in events_list %}
+		<br>
+		<li><strong>Event Name :</strong> <i>{{ event.event_name }}</i> <br><strong>Venue : </strong><i>{{ event.venue }}</i> <br> <strong>Date : </strong><i>{{ event.date }}</i></li>
+		{% endfor %}
+	</ol>
+	{% endif %}
+</body>
+</html>
